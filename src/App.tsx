@@ -1,6 +1,5 @@
 import React from "react";
 // import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import {hot} from "react-hot-loader";
 
 import {Router, Route, Switch} from "react-router-native";
 import history from "./common/history";
@@ -15,7 +14,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import DemoRedirect from "./pages/demos/DemoRedirect";
 import Login from "./pages/Login";
 import DemoHome from "./pages/demos/DemoHome";
-import {Platform} from "react-native";
 
 // const {height} = Dimensions.get('screen');
 
@@ -53,4 +51,7 @@ const App:React.FunctionComponent = () => {
         </Provider>
     );
 };
-export default Platform.OS===`web`?hot(module)(App):App
+// import {Platform} from "react-native";
+// import {hot} from "react-hot-loader";
+// export default Platform.OS===`web`?hot(module)(App):App
+export default App
