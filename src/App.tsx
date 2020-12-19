@@ -1,5 +1,7 @@
 import React from "react";
 // import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {hot} from "react-hot-loader";
+
 import {Router, Route, Switch} from "react-router-native";
 import history from "./common/history";
 import {Provider} from "react-redux";
@@ -13,6 +15,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import DemoRedirect from "./pages/demos/DemoRedirect";
 import Login from "./pages/Login";
 import DemoHome from "./pages/demos/DemoHome";
+import {Platform} from "react-native";
 
 // const {height} = Dimensions.get('screen');
 
@@ -30,7 +33,7 @@ import DemoHome from "./pages/demos/DemoHome";
 
 // import DemoHome from "./pages/demos/DemoHome";
 
-const App = () => {
+const App:React.FunctionComponent = () => {
     const Content = <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/demo-home" exact component={DemoHome}/>
@@ -50,5 +53,4 @@ const App = () => {
         </Provider>
     );
 };
-
-export default App;
+export default Platform.OS===`web`?hot(module)(App):App
