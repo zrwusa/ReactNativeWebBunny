@@ -1,17 +1,14 @@
-<h1>React-Bunny</h1>
+<h1>React-Native-Web-Bunny</h1>
 
-React,Typescript,Webpack 5,Redux,SASS,Mock server,JWT Auth,Autoprefixer,Eslint,Stylelint.
+React Native,iOS Android Web,Write once run everywhere,Typescript,Webpack 5,Redux,Mock server,JWT Auth,Eslint,Stylelint.
 
 I know you don't want a complicated project, what you want is a collection of samples based on cutting-edge technology.Your happy use is my goal！
 <table>
 <thead><tr><th>Name</th><th>Desc</th></tr></thead>
 <tbody>
-<tr><td>Grid responsive layout</td><td>  </td></tr>
-<tr><td>Flexbox responsive layout</td><td>  </td></tr>
+<tr><td>Redux & Redux Thunk</td><td>  </td></tr>
 <tr><td>Class component</td><td>  </td></tr>
 <tr><td>Function component</td><td>  </td></tr>
-<tr><td>CSS BEM</td><td>  </td></tr>
-<tr><td>Media queries SASS variables</td><td>  </td></tr>
 </tbody></table>
 
 <div>
