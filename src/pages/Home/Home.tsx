@@ -15,7 +15,7 @@ class Home extends Component<IProps, IStates> {
     render(): React.ReactNode {
         return (<View>
             <Text>{this.props.title}</Text>
-            <Text>{this.state.name}{33333}</Text>
+            <Text>{this.state.name}</Text>
         </View>);
     }
 }
