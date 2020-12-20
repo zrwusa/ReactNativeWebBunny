@@ -1,8 +1,7 @@
 {
-  "name": "ReactNativeBunny",
-  "version": "0.0.1",
+  "name": "ReactNativeWebBunny",
+  "version": "0.3.0",
   "private": true,
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,12 +9,13 @@
     "test": "jest",
     "lint": "eslint .",
     "web": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack",
+    "web-build": "cross-env NODE_ENV=production webpack",
     "mock": "node src/mock/server.js",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-alle",
-    "start-clean": "yarn start -- --reset-cach",
+    "start-reset": "react-native start --reset-cache",
     "watch": "jest -u --forceExit --detectOpenHandles --watchAll",
-    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache"
+    "jest-reset": "jest --clearCache",
+    "reset": "watchman watch-del-all; rm -rf $TMPDIR/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf $TMPDIR/haste-map-react-native-packager-*; rm -rf ./ios/build; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd .."
   },
   "dependencies": {
     "react-native": "^0.63.4",
@@ -34,14 +34,12 @@
     "@types/react-redux": "^7.1.12",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-router-native": "^5.1.0",
-    "@types/redux-actions": "^2.6.1",
     "@types/webpack": "^4.41.25",
     "@types/webpack-dev-server": "^3.11.1",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "axios": "^0.21.0",
     "babel-loader": "^8.2.1",
-    "babel-plugin-react-native-web": "^0.14.10",
     "babel-plugin-transform-runtime": "^6.23.0",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
