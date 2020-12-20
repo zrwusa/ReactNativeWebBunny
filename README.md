@@ -9,6 +9,7 @@ I know you don't want a complicated project, what you want is a collection of sa
 <tr><td>Redux & Redux Thunk</td><td>  </td></tr>
 <tr><td>Class component</td><td>  </td></tr>
 <tr><td>Function component</td><td>  </td></tr>
+<tr><td>React Fast Refresh on 3 platforms</td><td>  </td></tr>
 </tbody></table>
 
 <div>
@@ -24,7 +25,7 @@ I know you don't want a complicated project, what you want is a collection of sa
 </div>
 
 ## Installation
-For development
+For development on web
 ```sh
 // with npm
 npm install
@@ -33,6 +34,24 @@ npm start
 // with yarn
 yarn
 yarn start
+```
+
+For development on iOS
+```sh
+// with npm
+npm ios
+
+// with yarn
+yarn ios
+```
+
+For development on Android
+```sh
+// with npm
+npm android
+
+// with yarn
+yarn android
 ```
 
 For http-server RESTFul mock server with JWT auth
@@ -47,10 +66,10 @@ yarn mock
 For simulating a web server serving path '/public' as a web at local.
 ```sh
 // with npm
-npm web
+npm web-serve
 
 // with yarn
-yarn web
+yarn web-serve
 ```
 You can test you app as a real production env,and use a performance tool E.g. Lighthouse to test the performance.
 ![](https://raw.githubusercontent.com/zrwusa/assets/master/images/Screen%20Shot%202020-12-13%20at%2014.26.36.png)
@@ -69,16 +88,14 @@ yarn global add react-bunny-cli
 react-bunny-cli init product-name
 ```
 
-[CLI repository](https://github.com/zrwusa/react-bunny-cli)
 
 
-[Check online deployed](https://react-bunny.vercel.app/)
 
 
 
 Yes, it's really all you need to get started as you can see in this live and interactive demo:
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/zrwusa/react-bunny/tree/main)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/zrwusa/ReactNativeWebBunny/tree/main)
 
 
 
