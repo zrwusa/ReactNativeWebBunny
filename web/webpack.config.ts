@@ -3,7 +3,7 @@ import webpack from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import {name as appName} from "./app.json";
+import {name as appName} from "../app.json";
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 function configFactory(): webpack.Configuration {
@@ -42,7 +42,7 @@ function configFactory(): webpack.Configuration {
                         loader: "babel-loader",
                         options: {
                             sourceMap: devMode,
-                            plugins: devMode?['react-refresh/babel']:[],
+                            plugins: devMode ? ['react-refresh/babel'] : [],
                         },
                     },
                 },
@@ -96,7 +96,7 @@ function configFactory(): webpack.Configuration {
             }
         },
         plugins: [
-            devMode? new ReactRefreshPlugin(): Function(),
+            devMode ? new ReactRefreshPlugin() : Function(),
             prodMode ? new CleanWebpackPlugin() : Function(),
             new HtmlWebpackPlugin({
                 title: appName,
