@@ -17,7 +17,6 @@ I know you don't want a complicated project, what you want is a collection of sa
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 [![CircleCI](https://img.shields.io/circleci/project/github/mui-org/material-ui/next.svg)](https://app.circleci.com/pipelines/github/zrwusa/react-bunny)
 [![Coverage Status](https://img.shields.io/codecov/c/github/mui-org/material-ui/next.svg)](https://codecov.io/gh/zrwusa/react-bunny)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=mui-org/material-ui)](https://dependabot.com)
 [![Crowdin](https://badges.crowdin.net/material-ui-docs/localized.svg)](https://crowdin.com/project/react-bunny)
 
 ![](https://raw.githubusercontent.com/zrwusa/ReactNativeWebBunny/main/web/screen-show.gif)
