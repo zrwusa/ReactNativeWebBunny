@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "web:build": "cross-env NODE_ENV=production webpack --config web/webpack.config.ts",
+    "build": "yarn web:build",
     "web:serve": "yarn web:build; http-server -P http://localhost:8080? web/public/",
     "mock": "node src/mock/server.js",
     "start": "yarn web",

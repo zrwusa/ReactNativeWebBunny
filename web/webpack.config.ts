@@ -11,7 +11,7 @@ function configFactory(): webpack.Configuration {
         ts: /\.(tsx|ts|jsx|js|mjs)$/,
         image: /\.(png|svg|jpg|jpeg|gif)$/i,
     };
-    const buildPath = "public";
+    const buildPath = path.join(__dirname,"../public");
     const devMode = process.env.NODE_ENV === "development";
     const prodMode = process.env.NODE_ENV === "production";
 
