@@ -1,19 +1,19 @@
 import React from "react";
-import NavLinks from "../NavContent";
-import Header from "./Header";
+import DemoNavLinks from "./DemoNavLinks";
+import DemoHeader from "./DemoHeader";
 import {View,Text} from "react-native";
 
 interface IProps {
     title?: string,
 }
 
-const GridLayout: React.FunctionComponent<IProps> = ({title,children}) => {
+const DemoGridLayout: React.FC<IProps> = ({title,children}) => {
     return (
             <View>
-                <Header title={title}/>
+                <DemoHeader title={title} />
                 <View>
                     <Text>Nav bar</Text>
-                    <NavLinks />
+                    <DemoNavLinks />
                 </View>
                     <Text>Content</Text>
                 {children}
@@ -25,4 +25,4 @@ const GridLayout: React.FunctionComponent<IProps> = ({title,children}) => {
     );
 }
 
-export default GridLayout;
+export default DemoGridLayout;

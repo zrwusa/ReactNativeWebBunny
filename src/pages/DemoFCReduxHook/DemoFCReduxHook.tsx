@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {demoHelloStateAction1} from "../../../stores/demo-hello/actions";
-import {IRootState} from "../../../stores/models";
+import {demoHelloStateAction1} from "../../stores/demo-hello/actions";
+import {IRootState} from "../../stores/models";
 import {Button, Text, View} from "react-native";
 
 

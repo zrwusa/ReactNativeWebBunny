@@ -11,15 +11,15 @@ function configFactory(): webpack.Configuration {
         ts: /\.(tsx|ts|jsx|js|mjs)$/,
         image: /\.(png|svg|jpg|jpeg|gif)$/i,
     };
-    const buildPath = path.join(__dirname,"../public");
-    const devMode = process.env.NODE_ENV === "development";
-    const prodMode = process.env.NODE_ENV === "production";
+    const buildPath = path.join(__dirname, "../public");
+    const isDev = process.env.NODE_ENV === "development";
+    const isProd = process.env.NODE_ENV === "production";
 
     return {
         entry: "./src/index.ts",
-        mode: devMode ? "development" : prodMode ? "production" : "none",
-        devtool: devMode ? "source-map" : false,
-        devServer: devMode ? {
+        mode: isDev ? "development" : isProd ? "production" : "none",
+        devtool: isDev ? "source-map" : false,
+        devServer: isDev ? {
             contentBase: path.join(__dirname, buildPath),
             compress: false,
             port: 3006,
@@ -38,14 +38,25 @@ function configFactory(): webpack.Configuration {
                 {
                     test: ext.ts,
                     exclude: /node_modules/,
+                    // include: [
+                    //     `/node_modules/react-native$`,
+                    //     `/node_modules/react-router-native`,
+                    //     `/node_modules/react-native-elements`,
+                    //     `/node_modules/react-native-vector-icons`
+                    // ],
                     use: {
                         loader: "babel-loader",
                         options: {
-                            sourceMap: devMode,
-                            plugins: devMode ? ['react-refresh/babel'] : [],
+                            sourceMap: isDev,
+                            plugins: isDev ? ['react-refresh/babel'] : [],
                         },
                     },
                 },
+                // {
+                //     test: /\.ttf$/,
+                //     loader: "url-loader", // or directly file-loader
+                //     include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+                // },
                 // {
                 //   test: ext.ts,
                 //   exclude: /node_modules/ ,
@@ -53,7 +64,7 @@ function configFactory(): webpack.Configuration {
                 //     loader: "ts-loader",
                 //     options:{
                 //       compilerOptions: {
-                //         "sourceMap": devMode,
+                //         "sourceMap": isDev,
                 //       }
                 //     }
                 //   },
@@ -65,19 +76,21 @@ function configFactory(): webpack.Configuration {
             alias: {
                 "react-native$": "react-native-web",
                 "react-router-native": "react-router-dom",
+                "react-native-elements": "react-native-web",
+                // "react-native-vector-icons": "react-native-web"
             },
         },
         output: {
             path: path.resolve(__dirname, buildPath),
-            filename: devMode ? "[name].js" : "[name].[chunkhash].js",
+            filename: isDev ? "[name].js" : "[name].[chunkhash].js",
             publicPath: "/"
         },
         optimization: {
-            minimize: prodMode,
+            minimize: isProd,
             minimizer: [
                 `...`, // For webpack@5 extend existing minimizers
             ],
-            runtimeChunk: devMode ? "single" : undefined,
+            runtimeChunk: isDev ? "single" : undefined,
             splitChunks: {
                 chunks: "all",
                 maxInitialRequests: Infinity,
@@ -85,7 +98,7 @@ function configFactory(): webpack.Configuration {
                 cacheGroups: {
                     vendor: {
                         test: /[\\/]node_modules[\\/]/,
-                        name: devMode ?
+                        name: isDev ?
                             (module: any) => {
                                 const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];                            // get the name node_modules/packageName
                                 return `npm.${packageName.replace('@', '')}`;                            // npm package names are URL-safe, but some servers don't like @ symbols
@@ -96,12 +109,14 @@ function configFactory(): webpack.Configuration {
             }
         },
         plugins: [
-            devMode ? new ReactRefreshPlugin() : Function(),
-            prodMode ? new CleanWebpackPlugin() : Function(),
+            isDev ? new ReactRefreshPlugin() : Function(),
+            isProd ? new CleanWebpackPlugin() : Function(),
             new HtmlWebpackPlugin({
                 title: appName,
                 filename: "index.html",
-                template: "./src/index.html"
+                template: "./src/index.html",
+                // showErrors: isDev,
+                // minify: isProd,
             }),
             new ForkTsCheckerWebpackPlugin({
                 async: false,
@@ -110,7 +125,7 @@ function configFactory(): webpack.Configuration {
                 },
             }),
         ],
-        target: devMode ? "web" : "browserslist", //default being "browserlist" since 5.0.0-rc.1,Set to "web" when developing with react-hot-loader
+        target: isDev ? "web" : "browserslist", //default being "browserlist" since 5.0.0-rc.1,Set to "web" when developing with react-hot-loader
     };
 }
 

@@ -65,3 +65,5 @@ public/
 backup/
 __tests__/
 web/public/
+note.md
+test.json

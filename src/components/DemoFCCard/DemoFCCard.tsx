@@ -3,7 +3,7 @@ import {View,Text} from "react-native";
 
 type IProps = {title: string,paragraph?: string,}
 
-const FCCard: React.FunctionComponent<IProps> = ({title, paragraph, children})=>{
+const DemoFCCard: React.FunctionComponent<IProps> = ({title, paragraph, children})=>{
     return(<View>
         <Text>{title}</Text>
         <Text>
@@ -13,4 +13,4 @@ const FCCard: React.FunctionComponent<IProps> = ({title, paragraph, children})=>
         {children}
     </View>);
 }
-export default FCCard
+export default DemoFCCard

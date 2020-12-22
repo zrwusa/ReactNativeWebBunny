@@ -4,7 +4,7 @@ import {View,Text,Button} from "react-native";
 type IProps = {title: string,}
 type IStates = {time: Date,intervalID: ReturnType<typeof setInterval>,}
 
-class CCCLock extends Component<IProps, IStates> {
+class DemoCCClock extends Component<IProps, IStates> {
 
     tick(): void {
         this.setState({
@@ -47,4 +47,4 @@ class CCCLock extends Component<IProps, IStates> {
         </View>);
     }
 }
-export default CCCLock
+export default DemoCCClock

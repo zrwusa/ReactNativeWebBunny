@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import FCCard from "../../../components/demos/FCCard";
-import CCClock from "../../../components/demos/CCClock";
-import Request from "../../../components/demos/Request";
+import DemoFCCard from "../../components/DemoFCCard";
+import DemoCCClock from "../../components/DemoCCClock";
+import DemoRequest from "../../components/DemoRequest";
 import {Text, View, TextInput} from "react-native";
+import {Button} from "react-native-elements";
 
 type IProps = { title?: string }
 type IStates = { name: string }
@@ -16,13 +17,16 @@ class DemoHome extends Component<IProps, IStates> {
         return (<View>
             <Text>Demo Home Page</Text>
             <View>
-                <FCCard title="FCCard is a FunctionComponent" paragraph="I am paragraph"/>
+                <DemoFCCard title="DemoFCCard is a FunctionComponent" paragraph="I am paragraph"/>
             </View>
             <View>
-                <CCClock title="CCClock is a ClassComponent"/>
+                <DemoCCClock title="DemoCCClock is a ClassComponent"/>
             </View>
             <View>
-                <Request title={"Request is a http request component"}/>
+                <DemoRequest title={"DemoRequest is a http request component"}/>
+            </View>
+            <View>
+                <Button title={"Third part component"}/>
             </View>
             <View>
                 <TextInput placeholder={"I am placeholder"}/>
@@ -35,5 +39,6 @@ class DemoHome extends Component<IProps, IStates> {
         </View>);
     }
 }
+
 
 export default DemoHome

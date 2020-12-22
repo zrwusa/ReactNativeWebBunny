@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {IReqDemoThunkPayload} from "../../../stores/payloads";
-import {IRootState} from "../../../stores/models";
-import {IThunkDispatch} from "../../../stores/thunk";
-import {demoThunkAction} from "../../../stores/demo-thunk/actions";
+import {IReqDemoThunkPayload} from "../../stores/payloads";
+import {IRootState} from "../../stores/models";
+import {IThunkDispatch} from "../../stores/thunk";
+import {demoThunkAction} from "../../stores/demo-thunk/actions";
 import {Button, Text, View} from "react-native";
 
 const mapStateToProps = (rootState: IRootState) => ({...rootState.demoThunkState});

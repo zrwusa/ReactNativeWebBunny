@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-native";
 import {Text, View} from "react-native";
 
-const NavLinks: React.FunctionComponent = () => {
+const DemoNavLinks: React.FunctionComponent = () => {
     return (
         <View>
             <Link to="/"><Text>Home</Text></Link>
@@ -12,9 +12,10 @@ const NavLinks: React.FunctionComponent = () => {
             <Link to="/demo-fc-redux-hook"><Text>Demo FC Redux Hook</Text></Link>
             <Link to="/demo-thunk-cc"><Text>Demo Thunk CC</Text></Link>
             <Link to="/demo-redirect"><Text>Demo Redirect</Text></Link>
+            <Link to="/demo-third-part"><Text>Demo Third Part</Text></Link>
             <Link to="/login"><Text>Login</Text></Link>
         </View>
     );
 }
 
-export default NavLinks;
+export default DemoNavLinks;

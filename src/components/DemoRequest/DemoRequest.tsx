@@ -1,12 +1,12 @@
 import React, {Component} from "react";
-import api from "../../../common/api";
-import {IDemoEmployee} from "../../../stores/models";
+import api from "../../common/api";
+import {IDemoEmployee} from "../../stores/models";
 import {Button, Text, View} from "react-native";
 
 type IProps = { title: string, }
 type IStates = { name: string, employees: Array<IDemoEmployee>, }
 
-class Request extends Component<IProps, IStates> {
+class DemoRequest extends Component<IProps, IStates> {
     constructor(props: IProps) {
         super(props);
         this.getEmployees = this.getEmployees.bind(this);
@@ -47,4 +47,4 @@ class Request extends Component<IProps, IStates> {
     }
 }
 
-export default Request
+export default DemoRequest
