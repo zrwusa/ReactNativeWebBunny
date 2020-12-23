@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {Text, View} from "react-native";
 
-type IProps = { title?: string, }
-type IStates = { name: string, }
+type Props = { title?: string, }
+type States = { name: string, }
 
-class Home extends Component<IProps, IStates> {
-    constructor(props: IProps) {
+class Home extends Component<Props, States> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             name: "Page Home"

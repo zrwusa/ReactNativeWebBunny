@@ -1,9 +1,9 @@
 import React from "react";
 import {View,Text} from "react-native";
 
-type IProps = {title: string,paragraph?: string,}
+type Props = {title: string,paragraph?: string,}
 
-const DemoFCCard: React.FunctionComponent<IProps> = ({title, paragraph, children})=>{
+const DemoFCCard: React.FunctionComponent<Props> = ({title, paragraph, children})=>{
     return(<View>
         <Text>{title}</Text>
         <Text>

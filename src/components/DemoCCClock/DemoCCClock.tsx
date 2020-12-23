@@ -1,10 +1,21 @@
 import React, {Component} from "react";
-import {View,Text,Button} from "react-native";
+import {View, Text, Button} from "react-native";
 
-type IProps = {title: string,}
-type IStates = {time: Date,intervalID: ReturnType<typeof setInterval>,}
+type Props = { title: string, }
+type States = { time: Date, intervalID: ReturnType<typeof setInterval>, }
 
-class DemoCCClock extends Component<IProps, IStates> {
+class DemoCCClock extends Component<Props, States> {
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            time: new Date(),
+            intervalID: setInterval((): void => undefined, 0)
+        };
+        this.go = this.go.bind(this);
+        this.stop = this.stop.bind(this);
+        this.handleGoClick = this.handleGoClick.bind(this);
+        this.handleStopClick = this.handleStopClick.bind(this);
+    }
 
     tick(): void {
         this.setState({
@@ -19,32 +30,35 @@ class DemoCCClock extends Component<IProps, IStates> {
         });
     }
 
+    stop(): void {
+        clearInterval(this.state.intervalID);
+    }
+
     handleGoClick(): void {
         this.go();
     }
-    handleStopClick(): void {
-        clearInterval(this.state.intervalID);
-    }
 
-    UNSAFE_componentWillMount(): void {
-        this.tick();
+    handleStopClick(): void {
+        this.stop();
     }
 
     componentDidMount(): void {
+        this.tick();
         this.go();
-    }
-
-    componentWillUnmount(): void {
-        clearInterval(this.state.intervalID);
     }
 
     render(): React.ReactNode {
         return (<View>
             <Text>{this.props.title}</Text>
             <Text>The current time is {this.state.time.toLocaleTimeString()}</Text>
-            <Button onPress={this.handleStopClick} title="Stop" />
-            <Button onPress={this.handleGoClick} title="Go" />
+            <Button onPress={this.handleStopClick} title="Stop"/>
+            <Button onPress={this.handleGoClick} title="Go"/>
         </View>);
     }
+
+    componentWillUnmount(): void {
+        this.stop();
+    }
 }
+
 export default DemoCCClock

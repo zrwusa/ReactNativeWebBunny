@@ -3,11 +3,11 @@ import api from "../../common/api";
 import {IDemoEmployee} from "../../stores/models";
 import {Button, Text, View} from "react-native";
 
-type IProps = { title: string, }
-type IStates = { name: string, employees: Array<IDemoEmployee>, }
+type Props = { title: string, }
+type States = { name: string, employees: Array<IDemoEmployee>, }
 
-class DemoRequest extends Component<IProps, IStates> {
-    constructor(props: IProps) {
+class DemoRequest extends Component<Props, States> {
+    constructor(props: Props) {
         super(props);
         this.getEmployees = this.getEmployees.bind(this);
         this.handleGetSomethingClick = this.handleGetSomethingClick.bind(this);

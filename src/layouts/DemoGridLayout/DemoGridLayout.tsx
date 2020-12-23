@@ -3,11 +3,11 @@ import DemoNavLinks from "./DemoNavLinks";
 import DemoHeader from "./DemoHeader";
 import {View,Text} from "react-native";
 
-interface IProps {
+interface Props {
     title?: string,
 }
 
-const DemoGridLayout: React.FC<IProps> = ({title,children}) => {
+const DemoGridLayout: React.FC<Props> = ({title,children}) => {
     return (
             <View>
                 <DemoHeader title={title} />

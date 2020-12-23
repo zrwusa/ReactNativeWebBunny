@@ -3,11 +3,11 @@ import {useSelector} from "react-redux";
 import {IRootState} from "../../../stores/models";
 import {Text, View} from "react-native";
 
-interface IProps {
+interface Props {
     title?: string,
 }
 
-const DemoHeader: React.FC<IProps> = ({title}) => {
+const DemoHeader: React.FC<Props> = ({title}) => {
     const {user} = useSelector((store:IRootState) => store.userState);
 
     return (<View>

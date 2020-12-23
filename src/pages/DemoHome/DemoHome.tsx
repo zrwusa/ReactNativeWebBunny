@@ -3,13 +3,12 @@ import DemoFCCard from "../../components/DemoFCCard";
 import DemoCCClock from "../../components/DemoCCClock";
 import DemoRequest from "../../components/DemoRequest";
 import {Text, View, TextInput} from "react-native";
-import {Button} from "react-native-elements";
 
-type IProps = { title?: string }
-type IStates = { name: string }
+type Props = { title?: string }
+type States = { name: string }
 
-class DemoHome extends Component<IProps, IStates> {
-    constructor(props: IProps) {
+class DemoHome extends Component<Props, States> {
+    constructor(props: Props) {
         super(props);
     }
 
@@ -24,9 +23,6 @@ class DemoHome extends Component<IProps, IStates> {
             </View>
             <View>
                 <DemoRequest title={"DemoRequest is a http request component"}/>
-            </View>
-            <View>
-                <Button title={"Third part component"}/>
             </View>
             <View>
                 <TextInput placeholder={"I am placeholder"}/>

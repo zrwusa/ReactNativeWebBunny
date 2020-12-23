@@ -2,13 +2,13 @@ import React, {Component} from "react";
 import {RouteComponentProps, Redirect} from "react-router-native";
 import {View, Text} from "react-native";
 
-type IStates = { redirectToReferrer: boolean }
+type States = { redirectToReferrer: boolean }
 
 interface Props extends RouteComponentProps<never, never, { from: { pathname: string } }> {
     title?: string;
 }
 
-class DemoRedirect extends Component<Props, IStates> {
+class DemoRedirect extends Component<Props, States> {
     constructor(props: Props) {
         super(props);
         this.state = {

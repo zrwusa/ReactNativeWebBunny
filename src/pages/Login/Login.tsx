@@ -18,11 +18,11 @@ interface PropsWithRouteProps extends RouteComponentProps<never, never, { from: 
     title?: string;
 }
 
-type IProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> & PropsWithRouteProps;
-type IStates = { name: string; email: string; password: string;redirectToReferrer: boolean }
+type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> & PropsWithRouteProps;
+type States = { name: string; email: string; password: string;redirectToReferrer: boolean }
 
-class Login extends Component<IProps, IStates> {
-    constructor(props: IProps) {
+class Login extends Component<Props, States> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             name: "",

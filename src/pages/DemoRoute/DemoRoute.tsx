@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {RouteComponentProps} from "react-router-native";
 import {View,Text} from "react-native";
 
-type IProps = { id: string, };
-type IStates = { name: string, }
+type Props = { id: string, };
+type States = { name: string, }
 
-class DemoRoute extends Component<RouteComponentProps<IProps>, IStates> {
-    constructor(props: RouteComponentProps<IProps>) {
+class DemoRoute extends Component<RouteComponentProps<Props>, States> {
+    constructor(props: RouteComponentProps<Props>) {
         super(props);
     }
 

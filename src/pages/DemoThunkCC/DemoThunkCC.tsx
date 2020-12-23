@@ -12,10 +12,10 @@ const mapDispatchToProps = (dispatch: IThunkDispatch) => ({
     demoThunkAction: (data: IReqDemoThunkPayload) => dispatch(demoThunkAction(data)),
 });
 
-type IProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> ;
+type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> ;
 
-export class DemoThunkCC extends React.Component<IProps> {
-    constructor(props: IProps) {
+export class DemoThunkCC extends React.Component<Props> {
+    constructor(props: Props) {
         super(props);
         this.handleThunk = this.handleThunk.bind(this);
     }
