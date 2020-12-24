@@ -7,14 +7,16 @@ import DemoGridLayout from "./layouts/DemoGridLayout";
 import DemoRoutes from "./routes/DemoRoutes";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Platform} from "react-native";
+import {Switch} from "react-router-native";
 
-
-const App: React.FunctionComponent = () => {
+const App: React.FC = () => {
     return (
         <Provider store={store}>
             <Router history={history}>
                 <DemoGridLayout>
-                    <DemoRoutes/>
+                    <Switch>
+                        <DemoRoutes/>
+                    </Switch>
                 </DemoGridLayout>
             </Router>
         </Provider>
